@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!-- Axel '0vercl0k' Souchet -->
+<html lang='en-US' class='h-100'>
+  <head>
+    <title>🔭 Longue vue</title>
+    <meta content='text/html;charset=utf-8' http-equiv='Content-Type' />
+    <meta content='utf-8' http-equiv='encoding' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <meta name='description' content='Longue-vue is a remote exploit targeting NETGEAR DGND3700v2 devices that gives you full control over the router.' />
+    <meta name='keywords' content='longue-vue, netgear, DGND3700v2, remote code execution, exploit' />
+    <meta name='twitter:card'  content='summary_large_image' />
+    <meta name='twitter:site'  content='@0vercl0k' />
+    <meta name='twitter:image' content='https://0vercl0k.github.io/longue-vue/pics/twitter.png' />
+    <link href='./css/bootstrap.min.css' rel='stylesheet'>
+    <link href='./css/longue-vue.css' rel='stylesheet'>
+    <script type='text/javascript' src='./js/longue-vue.js'></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1J5ZSECQEK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-1J5ZSECQEK');
+    </script>
+  </head>
+  <!--
+    Give credit where it's due ❤:
+    - The graphic kit is from the Bootstrap 'Cover' template by @mdo: https://getbootstrap.com/docs/5.0/examples/cover/.
+    - The background picture has been made by Marco Allasio: https://www.pexels.com/photo/light-landscape-weather-space-5653748/
+  -->
+  <body class='d-flex h-100 text-center text-white bg-dark'>
+    <div class='cover-container d-flex w-100 h-100 p-3 mx-auto flex-column'>
+      <!-- Navigation bar -->
+      <header class='mb-auto'>
+        <div>
+          <h3 class='float-md-start mb-0'>🔭</h3>
+          <nav class='nav nav-masthead justify-content-center float-md-end'>
+            <a class='nav-link active' aria-current='page' href='#'>Home</a>
+            <a class='nav-link' href='https://github.com/0vercl0k/longue-vue'>Github</a>
+          </nav>
+        </div>
+      </header>
+      <!-- Main area of dipslay -->
+      <main class='px-3 d-grid gap-3'>
+        <h1>Longue vue</h1>
+        <p class='lead'>
+          The «Longue vue» exploit targets <b>NETGEAR DGND3700v2</b> modem / routers. From the <b>Internet</b> or the <b>LAN</b>, an attacker can execute arbitrary commands as root on your router; fully controlling your device.<br><br>⚠ Clicking the button tests if you are vulnerable by running the exploit: it will dump your credentials as well as the Linux kernel version running on the device.
+        </p>
+        <!-- Button to trigger the exploit -->
+        <p class='lead'>
+          <button id='amivuln' class='btn btn-lg btn-secondary fw-bold' type='button' onclick='main();' value=''>
+            <span id='spinner' class='spinner-border spinner-border-sm' role='status' aria-hidden='true' hidden></span>
+            Am I vulnerable 🧐?
+          </button>
+        </p>
+        <!-- Log area used by the exploit -->
+        <pre class='lead font-monospace text-start' id='log'></pre>
+      </main>
+      <!-- footer -->
+      <footer class='mt-auto text-white-50'>
+        <p>🔭 «Longue vue» was written with 🍻 by Axel '<a href='https://twitter.com/0vercl0k'>@0vercl0k</a>' Souchet</p>
+      </footer>
+    </div>
+  </body>
+</html>
