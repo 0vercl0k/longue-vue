@@ -1,8 +1,8 @@
-# Longue vue: NETGEAR DGND3700v2 Remote Code Execution
+# Longue vue 🔭: Exploit chain that compromises NETGEAR DGND3700v2 devices over the Internet
 
-«Longue vue» is an exploit chain that compromises remotely [NETGEAR DGND3700v2](https://www.netgear.com/support/product/DGND3700v2) devices. It has been tested on real hardware with the latest available with the latest available firmware image *V1.1.00.26_1.00.26NA* which is available for download on NETGEAR's website: [DGND3700v2-V1.1.00.26_1.00.26NA.zip](http://www.downloads.netgear.com/files/GDC/DGND3700V2/DGND3700v2-V1.1.00.26_1.00.26NA.zip). 
+«Longue vue» is an exploit chain that compromises remotely [NETGEAR DGND3700v2](https://www.netgear.com/support/product/DGND3700v2) devices. It has been tested on real hardware with the latest available firmware image *V1.1.00.26_1.00.26NA* available on NETGEAR's website: [DGND3700v2-V1.1.00.26_1.00.26NA.zip](http://www.downloads.netgear.com/files/GDC/DGND3700V2/DGND3700v2-V1.1.00.26_1.00.26NA.zip).
 
-The cool thing about «Longue vue» for me is that it can compromise the router over the web like with a browser exploit (no need for a sandbox escape!). If a user browsing internet at home, while being connected to this router, visited an attacker website, this one could control the router remotely (executing arbitrary commands as root, turning on remote access, etc.). 
+Its particularity is that it is able to compromise the router over the web like with a browser exploit: a user visiting a website is enough for an attacker to execute arbitrary root commands on their router 🔥
 
 <p align='center'>
 <img width=50% height=50% src='pics/longue-vue-remote-small.gif'>
@@ -14,13 +14,13 @@ Unfortunately for users, it seems that NETGEAR has refused to address the vulner
 
 > NETGEAR will not release a fix for this vulnerability on the affected product as the product is outside of the security support period. Current in-support models are not affected by this vulnerability.
 
-On top of the vulnerabilities exploited by «Longue vue» and the lack of security support from NETGEAR, the overall security of this device is probably the worst I've seen in a very long time - I would highly recommend moving off this device and getting another one (that's what I personally did).
+On top of the vulnerabilities exploited and the lack of security support from NETGEAR, the overall security of this device is probably the worst I've seen in a very long time - I would highly recommend moving off this device and getting another one (that's what I personally did).
 
 ## Running the exploit
 
-There are two ways to use «Longue vue»:
+There are two ways to run the exploit:
 - a LAN version that also works against devices that have turned on remote management,
-- directly from the Internet (like in a browser exploit).
+- directly from the Internet (like in a browser exploit). You can check if your router is affected by visiting [0vercl0k.github.io/longue-vue](https://0vercl0k.github.io/longue-vue).
 
 ### LAN / remote management turned on
 
@@ -155,6 +155,8 @@ Login: 'admin', Password: "TK'm$30ImYDh)Q.e}nZf"
 ```
 
 ### From the internet
+
+You can check if your router is affected by visiting [0vercl0k.github.io/longue-vue](https://0vercl0k.github.io/longue-vue).
 
 The easiest way to set up the attack in a lab is to start `python -m http.server` from the `web/` directory. Then, edit the `hosts` file of your OS (`C:\Windows\System32\drivers\etc\hosts` on Windows, `/etc/hosts` on Linux) and add an entry that resolves to the IP of the listenning Python HTTP server:
 
